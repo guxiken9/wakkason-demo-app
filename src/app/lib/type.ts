@@ -42,6 +42,18 @@ export const posts: Post[] = [{
     created_at: ""
 }];
 
+export const searchedPosts: Post[] = [{
+    id: "1",
+    title: "冬の思い出",
+    content: "とても寒かったです。 とても寒かったです。とても寒かったです。とても寒かったです。とても寒かったです。とても寒かったです。",
+    created_at: ""
+}, {
+    id: "2",
+    title: "冬の思い出",
+    content: "とても寒かったです。 とても寒かったです。とても寒かったです。とても寒かったです。とても寒かったです。とても寒かったです。",
+    created_at: ""
+}];
+
 // 検索結果
 export type SearchPostsResponse = {
     total: number;
