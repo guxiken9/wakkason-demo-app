@@ -1,7 +1,9 @@
 export default async function Message() {
   return (
     <>
-      <p>予約メッセージ投稿ページ</p>
+      <p>いつ</p>
+      <p>誰に</p>
+      <p>どんなメッセージを</p>
     </>
   );
 }
