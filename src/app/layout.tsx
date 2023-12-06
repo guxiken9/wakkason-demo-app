@@ -30,14 +30,27 @@ export default function RootLayout({
           <Link
             href="/"
             className={`
-        h-auto
-        my-auto
-        font-bold
-        text-5xl
-        tracking-tighter
-        `}
+            h-auto
+            my-auto
+            font-bold
+            text-5xl
+            tracking-tighter
+          `}
           >
             Life
+          </Link>
+          <Link
+            href="/message"
+            className={`
+              px-10
+              h-auto
+              my-6
+              font-bold
+              text-2xl
+              tracking-tighter
+            `}
+          >
+            Message
           </Link>
         </header>
         <main className="pt-20 pb-8 min-h-screen">
