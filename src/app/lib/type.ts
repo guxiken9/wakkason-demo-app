@@ -60,3 +60,10 @@ export type SearchPostsResponse = {
     total_pages: number;
     results: Post[];
 };
+
+// 予約投稿メッセージ
+export type ScheduledPostMessage = {
+    scheduled_posting_date: Date;
+    message: string;
+    to: string;
+}
