@@ -11,12 +11,13 @@ export const Search: FunctionComponent = () => {
             <div>
                 <div className="my-8 flex justify-center">
                     <input
-                        className="w-96 mr-4 p-2 bg-gray-700"
+                        className="w-96 mr-4 p-2 bg-slate-100"
                         value={query ?? ''}
-                        onChange={(e) => { setQuery(e.target.value); }}
+                        onChange={(e) => { setQuery(e.target.value); }
+                        }
                     />
                     <button
-                        className="bg-gray-700 py-2 px-4"
+                        className=" py-2 px-4 bg-slate-100"
                         onClick={async () => {
                             try {
                                 const response: Response = await fetch(
@@ -36,6 +37,7 @@ export const Search: FunctionComponent = () => {
                                     throw response;
                                 }
                                 const json: SearchPostsResponse = await response.json();
+                                console.log(json);
                                 setSearchedPosts(json.results);
                             } catch (error) {
                                 alert(
@@ -52,3 +54,4 @@ export const Search: FunctionComponent = () => {
             </div>
         )
     }
+}

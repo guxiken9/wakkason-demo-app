@@ -31,7 +31,7 @@ export default function RootLayout({
         text-5xl
         tracking-tighter
         `}>
-            My Life
+            Life
           </div>
         </header>
         <main className='pt-20 pb-8 min-h-screen'>
