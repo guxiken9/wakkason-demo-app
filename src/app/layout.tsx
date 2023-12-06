@@ -7,7 +7,6 @@ const inter = Inter({
   display: 'swap'
 });
 
-
 export default function RootLayout({
   children,
 }: {
@@ -32,7 +31,7 @@ export default function RootLayout({
         text-5xl
         tracking-tighter
         `}>
-            Life
+            My Life
           </div>
         </header>
         <main className='pt-20 pb-8 min-h-screen'>
