@@ -62,11 +62,13 @@ export const Search: FunctionComponent<{
                             });
                             setSearching(false);
                         } catch (error) {
+                            console.error(error);
                             alert(
                                 '検索中にエラーが発生しました'
                             );
                             setSearchedPosts([]);
                         } finally {
+                            setSearching(false);
                         }
                     }}
                 >
