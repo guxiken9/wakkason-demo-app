@@ -27,8 +27,7 @@ export default function RootLayout({
         px-6
       `}
         >
-          <Link
-            href="/"
+          <div
             className={`
             h-auto
             my-auto
@@ -38,11 +37,24 @@ export default function RootLayout({
           `}
           >
             Life
+          </div>
+          <Link
+            href="/"
+            className={`
+              px-10
+              h-auto
+              my-6
+              font-bold
+              text-2xl
+              tracking-tighter
+            `}
+          >
+            Home
           </Link>
           <Link
             href="/message"
             className={`
-              px-10
+          
               h-auto
               my-6
               font-bold
