@@ -5,7 +5,7 @@ export default async function Home() {
   const posts = await getPosts();
   return (
     <div>
-      <Search></Search>
+      <Search posts={posts}></Search>
     </div>
   )
 };
