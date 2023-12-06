@@ -26,7 +26,6 @@ export const Search: FunctionComponent<{
   const [searching, setSearching] = useState(false);
   const [searchedPosts, setSearchedPosts] = useState<Post[] | null>(null);
   const [loading, startTransition] = useTransition();
-  const url = process.env.NEXT_PUBLIC_API_BASE_URL;
   return (
     <div>
       <div className="my-8 flex justify-center">
