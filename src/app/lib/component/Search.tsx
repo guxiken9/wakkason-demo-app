@@ -3,7 +3,7 @@ import { FunctionComponent, useState, useTransition } from "react";
 import { Post, SearchPostsResponse } from "../type";
 import { VscSearch } from "react-icons/vsc";
 import { Loading } from "./Loading";
-import { PostsList } from "./PhotoList";
+import { PostsList } from "./PostList";
 
 const PostListWrapper: FunctionComponent<{
   loading: boolean;
