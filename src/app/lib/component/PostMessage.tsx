@@ -24,7 +24,7 @@ export const PostMessage = () => {
             </div>
 
             <div>
-              <Label text="message"></Label>
+              <Label text="Message"></Label>
               <div className="mt-1">
                 <TextArea placeholder="Leave a message here ..."></TextArea>
               </div>
