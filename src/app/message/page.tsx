@@ -1,9 +1,9 @@
+import { PostMessage } from "../lib/component/PostMessage";
+
 export default async function Message() {
   return (
     <>
-      <p>いつ</p>
-      <p>誰に</p>
-      <p>どんなメッセージを</p>
+      <PostMessage></PostMessage>
     </>
   );
 }
