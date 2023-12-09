@@ -10,26 +10,22 @@ export const PostMessage = () => {
         <div className="text-center">
           <h2 className="text-xl font-bold sm:text-3xl">Post a message</h2>
         </div>
-
         <div className="mt-5 p-4 relative z-10 bg-white border rounded-xl sm:mt-10 md:p-10">
           <form>
             <div className="mb-4 sm:mb-8">
               <Label text="Title"></Label>
               <Input placeholder="Title"></Input>
             </div>
-
             <div className="mb-4 sm:mb-8">
               <Label text="To"></Label>
               <Input placeholder="To"></Input>
             </div>
-
             <div>
               <Label text="Message"></Label>
               <div className="mt-1">
                 <TextArea placeholder="Leave a message here ..."></TextArea>
               </div>
             </div>
-
             <div className="mt-6 grid">
               <SubmitButtom name="Submit"></SubmitButtom>
             </div>
