@@ -12,7 +12,7 @@ export async function GET(request: Request) {
     });
 }
 
-export const getUsers: any = async () => {
+const getUsers = async () => {
     const users = prisma.users.findMany()
     return users;
 }
