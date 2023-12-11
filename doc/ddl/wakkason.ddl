@@ -16,7 +16,6 @@ CREATE TABLE memories (
     description TEXT,
     photo_url VARCHAR(255),
     date_occurred DATE,
-    location VARCHAR(255),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 ) DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
