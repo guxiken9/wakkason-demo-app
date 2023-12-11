@@ -2,6 +2,7 @@ import { Input } from "./atoms/Input";
 import { Label } from "./atoms/Label";
 import { SubmitButtom } from "./atoms/SubmitButton";
 import { TextArea } from "./atoms/TextArea";
+import { Select } from "./atoms/select";
 
 export const PostMessage = () => {
   return (
@@ -13,12 +14,16 @@ export const PostMessage = () => {
         <div className="mt-5 p-4 relative z-10 bg-white border rounded-xl sm:mt-10 md:p-10">
           <form>
             <div className="mb-4 sm:mb-8">
-              <Label text="Title"></Label>
-              <Input placeholder="Title"></Input>
+              <Label text="To"></Label>
+              <Select></Select>
             </div>
             <div className="mb-4 sm:mb-8">
-              <Label text="To"></Label>
-              <Input placeholder="To"></Input>
+              <Label text="Date"></Label>
+              <Input placeholder="9999-12-31"></Input>
+            </div>
+            <div className="mb-4 sm:mb-8">
+              <Label text="Title"></Label>
+              <Input placeholder="Title"></Input>
             </div>
             <div>
               <Label text="Message"></Label>

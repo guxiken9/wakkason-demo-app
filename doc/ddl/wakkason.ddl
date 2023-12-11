@@ -23,6 +23,7 @@ CREATE TABLE memories (
 CREATE TABLE messages (
     notification_id INT PRIMARY KEY AUTO_INCREMENT,
     recipient_id INT NOT NULL,
+    title TEXT NOT NULL,
     message TEXT NOT NULL,
     scheduled_time DATETIME NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,

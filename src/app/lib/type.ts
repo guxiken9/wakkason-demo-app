@@ -63,7 +63,10 @@ export type SearchPostsResponse = {
 
 // 予約投稿メッセージ
 export type ScheduledPostMessage = {
-    scheduled_posting_date: Date;
+    notification_id: string,
+    recipient_id: number;
+    title: string;
     message: string;
-    to: string;
+    scheduled_time: string;
+    created_at: string;
 }
