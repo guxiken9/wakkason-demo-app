@@ -31,7 +31,7 @@ export default function RootLayout({
             className={`
               h-auto
               my-auto
-              font-black
+              font-bold
               text-5xl
               tracking-tighter
             `}
