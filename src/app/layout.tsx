@@ -39,7 +39,7 @@ export default function RootLayout({
             Life
           </Link>
           <Link
-            href="/posts"
+            href="/post"
             className={`
               px-10
               h-auto
