@@ -1,0 +1,36 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model memories {
+  memory_id     Int       @id @default(autoincrement())
+  title         String    @db.VarChar(255)
+  description   String?   @db.Text
+  photo_url     String?   @db.VarChar(255)
+  date_occurred DateTime? @db.Date
+  created_at    DateTime? @default(now()) @db.Timestamp(0)
+}
+
+model messages {
+  notification_id Int       @id @default(autoincrement())
+  recipient_id    Int
+  title           String    @db.Text
+  message         String    @db.Text
+  scheduled_time  DateTime  @db.DateTime(0)
+  created_at      DateTime? @default(now()) @db.Timestamp(0)
+
+  @@index([recipient_id], map: "fk_1")
+}
+
+model users {
+  user_id       Int       @id @default(autoincrement())
+  username      String    @unique(map: "unique_username") @db.VarChar(255)
+  email         String    @unique(map: "unique_email") @db.VarChar(255)
+  password_hash String    @db.VarChar(255)
+  created_at    DateTime? @default(now()) @db.Timestamp(0)
+}
