@@ -27,19 +27,20 @@ export default function RootLayout({
         px-6
       `}
         >
-          <div
-            className={`
-            h-auto
-            my-auto
-            font-bold
-            text-5xl
-            tracking-tighter
-          `}
-          >
-            Life
-          </div>
           <Link
             href="/"
+            className={`
+              h-auto
+              my-auto
+              font-black
+              text-5xl
+              tracking-tighter
+            `}
+          >
+            Life
+          </Link>
+          <Link
+            href="/posts"
             className={`
               px-10
               h-auto
@@ -49,12 +50,11 @@ export default function RootLayout({
               tracking-tighter
             `}
           >
-            Home
+            Posts
           </Link>
           <Link
             href="/message"
             className={`
-          
               h-auto
               my-6
               font-bold
