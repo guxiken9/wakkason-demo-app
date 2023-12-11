@@ -70,3 +70,13 @@ export type ScheduledPostMessage = {
     scheduled_time: string;
     created_at: string;
 }
+
+export type User = {
+  user_id: number;
+  username: string;
+  email: string;
+  password_hash: string;
+  created_at: string; // 仮に文字列として扱うが、実際の状況に合わせて日時型に変更することが望ましい
+}
+
+export type Users = User[]
