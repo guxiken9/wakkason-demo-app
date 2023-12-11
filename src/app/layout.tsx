@@ -20,7 +20,6 @@ export default function RootLayout({
           className={`
         h-16
         bg-transparent
-        backdrop-blur-md
         flex
         fixed
         w-full
