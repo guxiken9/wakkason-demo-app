@@ -49,7 +49,7 @@ export default function RootLayout({
               tracking-tighter
             `}
           >
-            Posts
+            Post
           </Link>
           <Link
             href="/message"
