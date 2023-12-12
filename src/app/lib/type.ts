@@ -71,6 +71,13 @@ export type ScheduledPostMessage = {
     created_at: string;
 }
 
+export type Message = {
+    recipient_id: number;
+    title: string;
+    message: string;
+    scheduled_time: string;
+}
+
 export type User = {
   user_id: number;
   username: string;
