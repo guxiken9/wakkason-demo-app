@@ -12,7 +12,7 @@ const handleSubmit: FormEventHandler<HTMLElement> = (events) => {
   const message = form.get("message");
 
   const m: Message = {
-    recipient_id: Number(to),
+    recipient_id: parseInt(to as string),
     title: (title as string) || "",
     scheduled_time: (date as string) || "",
     message: (message as string) || "",
