@@ -5,21 +5,6 @@ import { Message } from "../type";
 
 const handleSubmit: FormEventHandler<HTMLElement> = (events) => {
   return;
-  events.preventDefault();
-  const form = new FormData(events.target as HTMLFormElement);
-  const date = form.get("date");
-  const title = form.get("title");
-  const message = form.get("message");
-
-  const response = fetch(`api/message`, {
-    method: "POST",
-    body: JSON.stringify({
-      m,
-    }),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
 };
 
 export const PostMemory = () => {
