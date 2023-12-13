@@ -1,5 +1,4 @@
-import { getPool, singleQuery } from "@/app/lib/tidb";
-import { Message } from "@/app/lib/type";
+import { singleQuery } from "@/app/lib/tidb";
 import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient({
