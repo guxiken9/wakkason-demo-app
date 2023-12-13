@@ -18,7 +18,7 @@ model memories {
 
 model messages {
   notification_id Int       @id @default(autoincrement())
-  recipient_id    Int
+  recipient_id    Int       @db.Int
   title           String    @db.Text
   message         String    @db.Text
   scheduled_time  DateTime  @db.DateTime(0)
