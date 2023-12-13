@@ -65,7 +65,7 @@ export default function RootLayout({
             Message
           </Link>
           <Link
-            href="/message"
+            href="/foryou"
             className={`
               h-auto
               my-6
@@ -74,7 +74,7 @@ export default function RootLayout({
               tracking-tighter
             `}
           >
-            Notification
+            For you
           </Link>
         </header>
         <main className="pt-20 pb-8 min-h-screen">
