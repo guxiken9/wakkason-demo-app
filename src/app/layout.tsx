@@ -55,6 +55,7 @@ export default function RootLayout({
             href="/message"
             className={`
               h-auto
+              pr-10
               my-6
               font-bold
               text-2xl
@@ -62,6 +63,18 @@ export default function RootLayout({
             `}
           >
             Message
+          </Link>
+          <Link
+            href="/message"
+            className={`
+              h-auto
+              my-6
+              font-bold
+              text-2xl
+              tracking-tighter
+            `}
+          >
+            Notification
           </Link>
         </header>
         <main className="pt-20 pb-8 min-h-screen">
