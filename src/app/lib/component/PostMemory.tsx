@@ -1,14 +1,12 @@
 "use client";
 
 import { FormEventHandler } from "react";
-import { Message } from "../type";
 
 const handleSubmit: FormEventHandler<HTMLElement> = (events) => {
   return;
 };
 
 export const PostMemory = () => {
-
   return (
     <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
       <div className="mx-auto max-w-2xl">
@@ -59,6 +57,15 @@ export const PostMemory = () => {
                   placeholder="Leave a message here ..."
                 ></textarea>
               </div>
+            </div>
+            <div>
+              <label
+                htmlFor="hs-feedback-post-comment-textarea-1"
+                className="block mb-2 text-sm font-medium"
+              >
+                Picture
+              </label>
+              <div className="mt-1"></div>
             </div>
             <div className="mt-6 grid">
               <button

@@ -27,6 +27,9 @@ export function getPool() {
 }
 
 export function singleQuery(sql, ...args) {
+
+    console.log(process.env.TIDB_DATABASE)
+
     const pool = getPool();
     return new Promise((resolve, reject) => {
         pool.query(sql, ...args, (err, results, fields) => {
