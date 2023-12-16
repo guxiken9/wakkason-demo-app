@@ -4,9 +4,9 @@ let pool = null;
 
 export function connect() {
     return mysql.createPool({
-        host: process.env.TIDB_HOST, // TiDB host, for example: {gateway-region}.aws.tidbcloud.com
+        host: process.env.TIDB_HOST || 'gateway01.ap-northeast-1.prod.aws.tidbcloud.com', // TiDB host, for example: {gateway-region}.aws.tidbcloud.com
         port: process.env.TIDB_PORT || 4000, // TiDB port, default: 4000
-        user: process.env.TIDB_USER, // TiDB user, for example: {prefix}.root
+        user: process.env.TIDB_USER || '4TaSoULqSdctTCK.root', // TiDB user, for example: {prefix}.root
         password: process.env.TIDB_PASSWORD, // The password of TiDB user.
         database: process.env.TIDB_DATABASE || 'WAKKASON', // TiDB database name, default: test
         ssl: {
