@@ -1,16 +1,18 @@
-import { Search } from "../lib/component/Search";
-import { Post, posts } from "../lib/type";
-
-// TODO:API呼び出しに変更
-const getPosts = async (): Promise<Post[]> => {
-    return posts;
-}
+import getMessages from "../lib/getMessage";
 
 export default async function Home() {
-    const posts = await getPosts();
-    return (
-        <div>
-            <Search posts={posts}></Search>
+  const messages = await getMessages();
+
+  return (
+    <div className="grid grid-cols-3 gap-4 w-[1200px] mx-auto">
+      {messages.map((message, index) => (
+        <div key={index} className="max-w-sm rounded overflow-hidden shadow-lg">
+          <div className="px-6 py-4">
+            <div className="font-bold text-xl mb-2">{message.title}</div>
+            <p className="text-base">{message.message}</p>
+          </div>
         </div>
-    )
-};
+      ))}
+    </div>
+  );
+}

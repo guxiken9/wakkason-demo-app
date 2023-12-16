@@ -1,12 +1,8 @@
 import { singleQuery } from "@/app/lib/tidb";
 import { PrismaClient } from "@prisma/client";
-import { useRouter } from "next/router";
 
-const prisma = new PrismaClient({
-    log: ["query", "error", "info", "warn"]
-},
-)
 
+const prisma = new PrismaClient()
 const sql = "INSERT INTO messages (recipient_id, scheduled_time, title, message, picture) VALUES (?, ?, ?, ?, ?);"
 
 export async function POST(request: Request) {
@@ -29,4 +25,14 @@ export async function POST(request: Request) {
 
     }
     
+}
+
+export async function GET() {
+    const result = await prisma.messages.findMany();
+    return new Response(JSON.stringify(result), {
+        status: 200,
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
 }

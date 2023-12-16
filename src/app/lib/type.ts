@@ -69,6 +69,7 @@ export type ScheduledPostMessage = {
     message: string;
     scheduled_time: string;
     created_at: string;
+    picture: string;
 }
 
 export type Message = {

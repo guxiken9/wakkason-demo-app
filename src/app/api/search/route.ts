@@ -1,4 +1,4 @@
-import { Post, SearchPostsResponse, posts, searchedPosts } from "@/app/lib/type";
+import { SearchPostsResponse, searchedPosts } from "@/app/lib/type";
 
 export async function POST(request: Request) {
     const { query }: { query: unknown } = await request.json();
