@@ -7,17 +7,16 @@ const prisma = new PrismaClient({
 },
 )
 
-const sql = "INSERT INTO messages (recipient_id, scheduled_time, title, message) VALUES (?, ?, ?, ?);"
+const sql = "INSERT INTO messages (recipient_id, scheduled_time, title, message, picture) VALUES (?, ?, ?, ?, ?);"
 
 export async function POST(request: Request) {
     const { m } = await request.json();
     console.log(m)
-    const param = [m.recipient_id, m.scheduled_time, m.title, m.message];
+    const param = [m.recipient_id, m.scheduled_time, m.title, m.message, m.picture];
     console.log(param)
 
     try {
         const { results } = await singleQuery(sql, param);
-        console.log(results);
         return new Response("", {
             status: 200,
         });

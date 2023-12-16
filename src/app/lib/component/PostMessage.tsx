@@ -2,27 +2,39 @@
 
 import { FormEventHandler, useEffect, useState } from "react";
 import { Message, Users } from "../type";
+import { fileToBase64 } from "../fileToBase64";
 
-const handleSubmit: FormEventHandler<HTMLElement> = (events) => {
+const handleSubmit: FormEventHandler<HTMLElement> = async (events) => {
   events.preventDefault();
   const form = new FormData(events.target as HTMLFormElement);
   const to = form.get("to");
   const date = form.get("date");
   const title = form.get("title");
   const message = form.get("message");
+  const file = form.get("picture") as File;
+  let base64 = "";
+
+  await fileToBase64(file)
+    .then((base64String) => {
+      base64 = base64String;
+    })
+    .catch((error) => {
+      console.error("Error converting file to Base64:", error);
+    });
 
   const m: Message = {
     recipient_id: parseInt(to as string),
     title: (title as string) || "",
     scheduled_time: (date as string) || "",
     message: (message as string) || "",
+    picture: base64,
   };
+
+  console.log(m);
 
   const response = fetch(`api/message`, {
     method: "POST",
-    body: JSON.stringify({
-      m,
-    }),
+    body: JSON.stringify({ m }),
     headers: {
       "Content-Type": "application/json",
     },
@@ -127,7 +139,8 @@ export const PostMessage = () => {
               </label>
               <input
                 className="block w-full mb-5 text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                id="default_size"
+                id="picture"
+                name="picture"
                 type="file"
               ></input>
             </div>

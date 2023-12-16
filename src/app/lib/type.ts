@@ -76,6 +76,7 @@ export type Message = {
     title: string;
     message: string;
     scheduled_time: string;
+    picture: string;
 }
 
 export type User = {
