@@ -24,11 +24,11 @@ const handleSubmit: FormEventHandler<HTMLElement> = async (events) => {
 
   const m: ScheduledPostMessage = {
     to_user: parseInt(to as string),
-    from_user: 2,
+    from_user: 2, // 固定値
     title: (title as string) || "",
     message: (message as string) || "",
     scheduled_time: (date as string) || "",
-    photo_url: base64 || "",
+    image: base64 || "",
   };
 
   console.log(m);

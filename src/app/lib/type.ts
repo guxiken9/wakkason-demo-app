@@ -66,7 +66,8 @@ export type ScheduledPostMessage = {
     from_user: number;
     title: string;
     message: string;
-    photo_url: string;
+    image?: string;
+    photo_url?: string;
     scheduled_time: string;
 }
 
