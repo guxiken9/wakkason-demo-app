@@ -1,7 +1,7 @@
 "use client";
 
 import { FormEventHandler, useEffect, useState } from "react";
-import { Message, Users } from "../type";
+import { ScheduledPostMessage, User } from "../type";
 import { fileToBase64 } from "../fileToBase64";
 
 const handleSubmit: FormEventHandler<HTMLElement> = async (events) => {
@@ -22,32 +22,36 @@ const handleSubmit: FormEventHandler<HTMLElement> = async (events) => {
       console.error("Error converting file to Base64:", error);
     });
 
-  const m: Message = {
-    recipient_id: parseInt(to as string),
+  const m: ScheduledPostMessage = {
+    to_user: parseInt(to as string),
+    from_user: 2,
     title: (title as string) || "",
-    scheduled_time: (date as string) || "",
     message: (message as string) || "",
-    picture: base64,
+    scheduled_time: (date as string) || "",
+    photo_url: base64 || "",
   };
 
   console.log(m);
-
-  const response = fetch(`api/message`, {
+  const url = process.env.NEXT_PUBLIC_API_BASE_URL + 'message'
+  const response = fetch(url, {
     method: "POST",
-    body: JSON.stringify({ m }),
+    body: JSON.stringify(m),
     headers: {
       "Content-Type": "application/json",
     },
   });
+
+  console.log(response);
 };
 
 export const PostMessage = () => {
-  const [users, setUsers] = useState<Users>([]);
+  const [users, setUsers] = useState<User[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`api/users`, {
+        const url = process.env.NEXT_PUBLIC_API_BASE_URL + 'users'
+        const response = await fetch(url, {
           method: "GET",
         });
         const data = await response.json();

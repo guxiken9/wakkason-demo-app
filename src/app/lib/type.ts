@@ -61,31 +61,19 @@ export type SearchPostsResponse = {
     results: Post[];
 };
 
-// 予約投稿メッセージ
 export type ScheduledPostMessage = {
-    notification_id: string,
-    recipient_id: number;
+    to_user: number;
+    from_user: number;
     title: string;
     message: string;
+    photo_url: string;
     scheduled_time: string;
-    created_at: string;
-    picture: string;
-}
-
-export type Message = {
-    recipient_id: number;
-    title: string;
-    message: string;
-    scheduled_time: string;
-    picture: string;
 }
 
 export type User = {
-  user_id: number;
-  username: string;
-  email: string;
-  password_hash: string;
-  created_at: string; // 仮に文字列として扱うが、実際の状況に合わせて日時型に変更することが望ましい
+    user_id: number;
+    username: string;
+    email: string;
+    password_hash: string;
+    created_at: string; // 仮に文字列として扱うが、実際の状況に合わせて日時型に変更することが望ましい
 }
-
-export type Users = User[]
