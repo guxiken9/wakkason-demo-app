@@ -61,6 +61,14 @@ export type SearchPostsResponse = {
     results: Post[];
 };
 
+export type Memory = {
+    title: string;
+    memory: string;
+    image?: string;
+    photo_url?: string;
+    created_by: number;
+}
+
 export type ScheduledPostMessage = {
     to_user: number;
     from_user: number;
