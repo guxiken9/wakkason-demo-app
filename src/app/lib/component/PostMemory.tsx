@@ -4,7 +4,6 @@ import { FormEventHandler } from "react";
 import { fileToBase64 } from "../fileToBase64";
 import { Memory } from "../type";
 
-
 const handleSubmit: FormEventHandler<HTMLElement> = async (events) => {
   events.preventDefault();
   const form = new FormData(events.target as HTMLFormElement);
@@ -29,7 +28,7 @@ const handleSubmit: FormEventHandler<HTMLElement> = async (events) => {
   };
 
   console.log(m);
-  const url = process.env.NEXT_PUBLIC_API_BASE_URL + 'memory'
+  const url = process.env.NEXT_PUBLIC_API_BASE_URL + "memory";
   const response = fetch(url, {
     method: "POST",
     body: JSON.stringify(m),
@@ -89,7 +88,8 @@ export const PostMemory = () => {
                 </label>
                 <input
                   className="block w-full mb-5 text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                  id="default_size"
+                  id="picture"
+                  name="picture"
                   type="file"
                 ></input>
               </div>
